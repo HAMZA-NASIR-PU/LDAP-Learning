@@ -18,3 +18,5 @@ I created this repository to document my learning and share practical implementa
 
 ---
 
+https://www.amazon.in/LDAP-Programming-JavaTM-Rob-Weltman/dp/0201657589
+https://www.amazon.com/Programming-Management-Integration-Clayton-Donley/dp/1930110405
