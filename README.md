@@ -96,3 +96,4 @@ Separating the web application and resource server in OAuth 2.0 provides better 
 
 Best MS Entra ID OAuth 2.0 Articles:
 https://learn.microsoft.com/en-us/azure/developer/java/spring-framework/spring-boot-starter-for-entra-developer-guide?tabs=SpringCloudAzure5x#protect-a-resource-serverapi
+https://learn.microsoft.com/en-gb/entra/identity-platform/id-tokens
