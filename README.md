@@ -93,3 +93,6 @@ public class SecurityConfig {
 
 ### **Conclusion**  
 Separating the web application and resource server in OAuth 2.0 provides better security, flexibility, and scalability. The web application handles authentication, while the resource server protects its APIs. This approach aligns well with microservices architecture and best practices.  
+
+Best MS Entra ID OAuth 2.0 Articles:
+https://learn.microsoft.com/en-us/azure/developer/java/spring-framework/spring-boot-starter-for-entra-developer-guide?tabs=SpringCloudAzure5x#protect-a-resource-serverapi
