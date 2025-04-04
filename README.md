@@ -43,3 +43,76 @@ According to  Wiki:
 - The Java Naming and Directory Interface (JNDI) is a Java API for a directory service that allows Java software clients to discover and look up data and resources (in the form of Java objects) via a name. Like all Java APIs that interface with host systems, JNDI is independent of the underlying implementation.
 - The root DSE is the entry at the top of the LDAP server directory information tree. All the namingcontexts (suffixes) in the LDAP server are directly below the root DSE. The root DSE contains information about the LDAP server, including the namingcontexts that are configured and the capabilities of the server. Each directory server has a unique entry called RootDSE. It provides data about the server, such as its capabilities, the LDAP version it supports, and the naming contexts it uses.
 - A `Bind DN` is an object that you bind to inside LDAP to give you permissions to do whatever you're trying to do. Some (many?) LDAP instances don't allow anonymous binds, or don't allow certain operations to be conducted with anonymous binds, so you must specify a bindDN to obtain an identity to perform that operation. In a similar non-technical way - and yes this is a stretch - a bank will allow you to walk in and look at their interest rates without giving them any sort of ID, but in order to open an account or withdraw money, you have to have an identity they know about - that identity is the bindDN.
+
+## Difference between Base DN and Bind DN
+
+### 1. **Bind DN (Distinguished Name)**:
+The **Bind DN** is the **username** or **identity** that is used to authenticate (or bind) to the LDAP server. It identifies the user (or service) that is requesting access to the LDAP directory and is used to establish a connection.
+
+- **Purpose**: The Bind DN is used to authenticate to the server. The LDAP server verifies the credentials associated with the Bind DN (typically paired with a password) to allow the connection.
+- **Format**: It is typically a full Distinguished Name (DN), which is a unique identifier for an entry in the directory.
+  
+Example of a Bind DN:
+- `uid=admin,ou=system` – In this example, the `uid=admin` specifies the user ID (`admin`), and `ou=system` specifies that the user is in the `system` organizational unit. This Bind DN could be for an administrator account that has permission to perform various operations on the LDAP server.
+
+### 2. **Base DN**:
+The **Base DN** defines the starting point or root of the directory tree where the LDAP search begins. It specifies the scope or the location within the directory structure from which to start searching for entries. 
+
+- **Purpose**: The Base DN is used to specify where to start searches within the directory. It's like saying "begin searching from here" in the LDAP hierarchy. It is not involved in authentication; it's purely for the purpose of searching or querying the directory.
+- **Format**: Like the Bind DN, the Base DN is also a Distinguished Name (DN) that represents the "root" or starting point of the search in the directory.
+
+Example of a Base DN:
+- `dc=example,dc=com` – This would typically represent the root of the directory for an organization or domain. The `dc` stands for "domain component," and in this case, it's referring to the domain `example.com`.
+
+### Key Differences:
+
+| **Aspect**         | **Bind DN**                                | **Base DN**                                |
+|--------------------|--------------------------------------------|--------------------------------------------|
+| **Purpose**        | Used for **authentication** to the LDAP server. | Used for specifying the **starting point** for LDAP searches. |
+| **Role**           | Identifies the user or service binding to the server (typically a full DN). | Defines where to start a search in the directory. |
+| **Example**        | `uid=admin,ou=system`                      | `dc=example,dc=com`                        |
+| **Usage in Code**  | Used when creating a connection and binding to the LDAP server (e.g., to authenticate). | Used in search operations to define where the search should start. |
+
+### Example to Clarify:
+
+Imagine you have the following LDAP structure:
+
+```
+dn: dc=example,dc=com
+    ├── ou=users
+    │   ├── uid=user1
+    │   └── uid=user2
+    └── ou=groups
+        ├── cn=admins
+        └── cn=users
+```
+
+- **Bind DN**: This would be the identity used to authenticate, such as `uid=admin,ou=system,dc=example,dc=com`. This is the administrator who has permission to access and modify entries within the LDAP server.
+- **Base DN**: For a search, you might start from the top of the directory, such as `dc=example,dc=com`, or you might want to search within a specific organizational unit, like `ou=users,dc=example,dc=com`, to find entries under that organizational unit.
+
+### How They Work Together in Code:
+
+When you connect to the LDAP server:
+
+1. **Bind DN**: The server will authenticate the user represented by the Bind DN.
+2. **Base DN**: Once authenticated, any search operation will use the Base DN to know where in the directory to begin searching.
+
+### Example in Code:
+
+```java
+String bindDN = "uid=admin,ou=system,dc=example,dc=com";  // User used to authenticate
+String baseDN = "dc=example,dc=com";  // The base where you start your search
+
+// Bind to the server with the Bind DN
+LDAPConnection connection = new LDAPConnection(serverAddress, portNumber, bindDN, password);
+
+// Perform a search starting from the Base DN
+SearchResult searchResult = connection.search(baseDN, SearchScope.SUB, "(objectClass=*)", "*");
+```
+
+- **Bind DN** is used to authenticate the connection (i.e., "who you are").
+- **Base DN** is used to define the root location where the search starts (i.e., "where to search").
+
+---
+
+
