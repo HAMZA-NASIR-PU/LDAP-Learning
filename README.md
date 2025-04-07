@@ -254,3 +254,6 @@ https://docs.spring.io/spring-ldap/reference/introduction.html
 - org.springframework.ldap.core.AttributesMapper
 - org.springframework.ldap.query.DefaultContainerCriteria
 - org.springframework.ldap.core.DirContextOperations
+- org.springframework.ldap.core.support.BaseLdapPathContextSource
+- org.springframework.ldap.core.support.LdapContextSource
+- org.springframework.security.authentication.UsernamePasswordAuthenticationToken
