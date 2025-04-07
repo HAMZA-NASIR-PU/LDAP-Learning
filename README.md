@@ -257,3 +257,10 @@ https://docs.spring.io/spring-ldap/reference/introduction.html
 - org.springframework.ldap.core.support.BaseLdapPathContextSource
 - org.springframework.ldap.core.support.LdapContextSource
 - org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+- org.springframework.security.ldap.authentication.LdapAuthenticationProvider works as AuthenticationManager
+- org.springframework.security.authentication.ProviderManager
+- java.security.Principal
+- org.springframework.security.core.Authentication
+
+`org.springframework.security.authentication.UsernamePasswordAuthenticationToken` extends `org.springframework.security.authentication.AbstractAuthenticationToken` implements `org.springframework.security.core.Authentication` extends 'java.security.Principal' and `java.io.Serializable`
+
