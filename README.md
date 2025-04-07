@@ -241,3 +241,10 @@ SASL is not an authentication protocol by itself — it's a **framework** that a
 
 ---
 
+## ✨ Some Crucial Java Naming and Directory Interface(JNDI) interfaces/classes
+
+https://docs.spring.io/spring-ldap/reference/introduction.html
+
+- javax.naming.directory.DirContext
+- java.util.HashTable
+- javax.naming.NamingEnumeration
