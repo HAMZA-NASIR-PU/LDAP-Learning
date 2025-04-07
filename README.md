@@ -252,3 +252,5 @@ https://docs.spring.io/spring-ldap/reference/introduction.html
 - org.springframework.ldap.core.LdapClient
 - org.springframework.ldap.core.LdapTemplate
 - org.springframework.ldap.core.AttributesMapper
+- org.springframework.ldap.query.DefaultContainerCriteria
+- org.springframework.ldap.core.DirContextOperations
