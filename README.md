@@ -168,4 +168,76 @@ mail: john.d.new@example.com
 
 ---
 
+## 🔐 What is SASL?
+
+**Simple Authentication and Security Layer (SASL)** is a framework for authentication and data security in Internet protocols.  
+It **decouples authentication mechanisms** from application protocols like SMTP, IMAP, LDAP, XMPP, etc.
+
+---
+
+## 🧩 SASL: A Pluggable Framework
+
+SASL is not an authentication protocol by itself — it's a **framework** that allows different authentication mechanisms to be plugged into application protocols.
+
+> ✨ Think of it as a **universal adapter** for authentication.
+
+---
+
+## 🛠️ How SASL Works
+
+1. **Client Requests Authentication**  
+   🧑‍💻 Client wants to access a service (e.g., email server).
+   
+2. **Server Offers SASL Mechanisms**  
+   🖥️ Server says: "I support PLAIN, DIGEST-MD5, SCRAM, etc."
+
+3. **Client Picks One**  
+   ✔️ Client chooses the best supported mechanism.
+
+4. **Exchange Happens**  
+   🔄 Challenge-response communication follows.
+
+5. **Access Granted or Denied**  
+   ✅ or ❌
+
+---
+
+## 🔍 Common SASL Mechanisms
+
+| 🔑 Mechanism     | 🔎 Description                                 |
+|------------------|-----------------------------------------------|
+| **PLAIN**        | Sends username & password in plain text (base64-encoded). Use only over TLS! |
+| **CRAM-MD5**     | Challenge-response with HMAC-MD5 hash         |
+| **DIGEST-MD5**   | More secure, supports integrity and encryption |
+| **SCRAM**        | Salted Challenge Response Authentication       |
+| **GSSAPI**       | Used with Kerberos for strong enterprise auth  |
+| **EXTERNAL**     | Authentication through external mechanism like TLS client certs |
+
+---
+
+## 🌐 Where is SASL Used?
+
+- 📬 **SMTP** – Email sending
+- 📥 **IMAP / POP3** – Email receiving
+- 📡 **XMPP** – Instant messaging (e.g., Jabber)
+- 🧾 **LDAP** – Directory access (e.g., Active Directory)
+
+---
+
+## 🧱 Why Use SASL?
+
+✅ **Flexibility** – Pluggable auth modules  
+✅ **Security** – Mechanisms support integrity, encryption  
+✅ **Standardized** – Widely supported in modern protocols  
+✅ **Extensible** – New mechanisms can be added as needed  
+
+---
+
+## 🧠 Quick Analogy
+
+> SASL is like a **socket** in the wall —  
+> You can plug in a phone charger, laptop, or any device (i.e., authentication mechanism).  
+> The socket stays the same, but the plug can change.
+
+---
 
