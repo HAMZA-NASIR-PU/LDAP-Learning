@@ -264,3 +264,7 @@ https://docs.spring.io/spring-ldap/reference/introduction.html
 
 `org.springframework.security.authentication.UsernamePasswordAuthenticationToken` extends `org.springframework.security.authentication.AbstractAuthenticationToken` implements `org.springframework.security.core.Authentication` extends 'java.security.Principal' and `java.io.Serializable`
 
+## ✨ LDAP BEST TUTORIALS
+
+https://www.zytrax.com/books/ldap/ch3/
+https://docs.oracle.com/javase/jndi/tutorial/ldap/schema/object.html
