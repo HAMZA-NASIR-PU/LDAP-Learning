@@ -241,6 +241,38 @@ SASL is not an authentication protocol by itself — it's a **framework** that a
 
 ---
 
+## ✨ Hierarchy in object classes
+
+In LDAP, **`person`** and **`organizationalPerson`** are **child classes (subclasses)** of the `top` class. LDAP uses an **object-oriented hierarchy**, so object classes inherit from one another.
+
+---
+
+### 🧬 Hierarchy Example:
+
+Here's a simplified inheritance chain:
+
+```
+top
+└── person
+    └── organizationalPerson
+        └── inetOrgPerson (commonly used for user entries)
+```
+
+- `top` ➝ base class (every object class ultimately inherits from it).
+- `person` ➝ adds `cn` (common name), `sn` (surname), etc.
+- `organizationalPerson` ➝ adds things like `title`, `ou` (organizational unit), etc.
+- `inetOrgPerson` ➝ adds internet-related attributes like `mail`, `uid`, etc.
+
+---
+
+### 📌 Why This Matters:
+Inheritance allows LDAP entries to:
+- Include all attributes from parent classes.
+- Be validated according to the schema rules.
+- Be extensible without duplicating attribute definitions.
+
+---
+
 ## ✨ Some Crucial Java Naming and Directory Interface(JNDI) interfaces/classes and Spring LDAP
 
 https://docs.spring.io/spring-ldap/reference/introduction.html
