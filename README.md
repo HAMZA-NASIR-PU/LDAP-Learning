@@ -272,3 +272,4 @@ https://docs.spring.io/spring-ldap/reference/introduction.html
 - https://www.ibm.com/docs/en/i/7.4.0?topic=ldap-directory-server-concepts
 - https://www.ibm.com/docs/en/sdse/6.3.1?topic=troubleshooting-directory-server-overview
 - https://www.ibm.com/docs/en/sdsu/8.0.1?topic=directory-server-overview
+- https://docs.spring.io/spring-ldap/docs/1.3.x/reference/html/odm.html
