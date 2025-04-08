@@ -270,3 +270,5 @@ https://docs.spring.io/spring-ldap/reference/introduction.html
 - https://docs.oracle.com/javase/jndi/tutorial/ldap/schema/object.html
 - https://www.digitalocean.com/community/tutorials/understanding-the-ldap-protocol-data-hierarchy-and-entry-components
 - https://www.ibm.com/docs/en/i/7.4.0?topic=ldap-directory-server-concepts
+- https://www.ibm.com/docs/en/sdse/6.3.1?topic=troubleshooting-directory-server-overview
+- https://www.ibm.com/docs/en/sdsu/8.0.1?topic=directory-server-overview
