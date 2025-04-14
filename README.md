@@ -26,6 +26,7 @@ I created this repository to document my learning and share practical implementa
 - https://docs.oracle.com/javase/tutorial/jndi/software/content.html
 - https://docs.oracle.com/javase/jndi/tutorial/basics/directory/src/SearchSubtree.java
 - https://auth0.com/blog/what-is-and-how-does-single-sign-on-work/ (**For Single Sign oN (SSO)**)
+- https://docs.oracle.com/javase/tutorial/jndi/objects/index.html
 
 According to  Wiki:
 **The Lightweight Directory Access Protocol (LDAP /ˈɛldæp/) is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network.[1] Directory services play an important role in developing intranet and Internet applications by allowing the sharing of information about users, systems, networks, services, and applications throughout the network.[2] As examples, directory services may provide any organized set of records, often with a hierarchical structure, such as a corporate email directory. Similarly, a telephone directory is a list of subscribers with an address and a phone number.**
