@@ -21,6 +21,7 @@ I created this repository to document my learning and share practical implementa
 - https://www.amazon.in/LDAP-Programming-JavaTM-Rob-Weltman/dp/0201657589
 - https://www.amazon.com/Programming-Management-Integration-Clayton-Donley/dp/1930110405
 - https://directory.apache.org/apacheds/basic-ug/1.2-some-background.html
+- https://directory.apache.org/apacheds/basic-ug/1.4.3-adding-partition.html
 - https://vvratha.blogspot.com/2011/10/creating-partitions-in-apacheds.html?utm_source=chatgpt.com
 - https://directory.apache.org/apacheds/basic-ug/1.1-what-apacheds-is.html
 - https://docs.oracle.com/javase/tutorial/jndi/software/content.html
